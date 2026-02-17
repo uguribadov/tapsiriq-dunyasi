@@ -19,9 +19,9 @@ Admin və Owner panelləri vasitəsilə tapşırıqlar idarə olunur.
 
 ## 🌐 Live Demo
 
-    https://your-username.github.io/developia/
+    [GİRİŞ](https://uguribadov.github.io/tapsiriq-dunyasi/)
 
-(Username hissəsini öz GitHub istifadəçi adınla əvəz et.)
+
 
 ------------------------------------------------------------------------
 
