@@ -18,9 +18,8 @@ Admin və Owner panelləri vasitəsilə tapşırıqlar idarə olunur.
 ------------------------------------------------------------------------
 
 ## 🌐 Live Demo
-
-    [GİRİŞ](https://uguribadov.github.io/tapsiriq-dunyasi/)
-
+    
+    https://uguribadov.github.io/tapsiriq-dunyasi/
 
 
 ------------------------------------------------------------------------
