@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>25 İyul Qrup | Task Site</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brandDot"></span>
+        <span>25 İyul Qrup | Task Site</span>
+      </div>
+      <div class="navlinks">
+        <a class="pill" href="index.html">Tapşırıqlar</a>
+        <a class="pill" href="admin.html">Admin</a>
+        <a class="pill" href="owner.html">Owner</a>
+        <a class="pill" href="about.html">About</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hero">
+    <h1 class="hTitle">Tapşırıqların siyahısı</h1>
+    <p class="hSub">Axtarış + Kateqoriya. Kartda “Daxil ol” mütləq var.</p>
+  </div>
+
+  <section class="container panel">
+    <div class="controls">
+      <div class="inputs">
+        <input id="q" class="input" placeholder="Axtar... (məs: todo, css)" />
+        <select id="cat" class="select">
+          <option value="">Kateqoriya: Hamısı</option>
+        </select>
+      </div>
+      <div id="stats" class="stats"></div>
+    </div>
+
+    <div id="list" class="grid"></div>
+
+    <div id="hint" class="notice hidden">
+      Heç nə tapılmadı.
+    </div>
+  </section>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

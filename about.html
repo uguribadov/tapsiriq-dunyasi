@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Tapşırıq Dünyası</title>
+  <meta name="description" content="Tapşırıq Dünyası layihəsi haqqında: kim edib, kimə aiddir, məqsəd, əlaqə." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brandDot"></span>
+        <span id="brandText">Tapşırıq Dünyası</span>
+      </div>
+      <div class="navlinks">
+        <a class="pill" href="index.html">Tapşırıqlar</a>
+        <!-- Admin/Owner linkini istəsən gizli saxla (silə bilərsən) -->
+        <a class="pill" href="admin.html">Admin</a>
+        <a class="pill" href="owner.html">Owner</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hero">
+    <h1 class="hTitle">About</h1>
+    <p class="hSub">
+      Tapşırıq Dünyası — HTML, CSS və JavaScript üzrə tapşırıqları paylaşmaq və idarə etmək üçün hazırlanmış statik layihədir.
+    </p>
+  </div>
+
+  <section class="container panel">
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+      <!-- Owner card -->
+      <article class="card fadeIn">
+        <div class="cardInner">
+          <div class="cardTop">
+            <span class="badge">Sahibi</span>
+            <span class="badge">Yaradıcı</span>
+          </div>
+
+          <h3 class="cardTitle">Uğur İbadov</h3>
+          <p class="cardDesc">
+            Mən bu saytı öz praktikam və başqaları üçün tapşırıqları bir yerdə saxlamaq məqsədilə hazırladım.
+            Burada yeni tapşırıqlar əlavə olunur, detal səhifələrində tələblər və faydalı linklər paylaşılır.
+          </p>
+
+          <div class="cardBottom">
+            <span class="badge">Əlaqə</span>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <a class="linkBtn" href="mailto:uguribadov2012@gmail.com">Email</a>
+              <a class="linkBtn" href="https://github.com/uguribadov" target="_blank" rel="noopener">GitHub</a>
+              <a class="linkBtn" href="https://instagram.com/in/ibadov031" target="_blank" rel="noopener">İnstagram</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project card -->
+      <article class="card fadeIn" style="animation-delay:70ms">
+        <div class="cardInner">
+          <div class="cardTop">
+            <span class="badge">Layihə</span>
+            <span class="badge">Məqsəd</span>
+          </div>
+
+          <h3 class="cardTitle">Bu sayt nə edir?</h3>
+          <p class="cardDesc">
+            Tapşırıqlar siyahıda görünür. Hər tapşırıqda “Daxil ol” ilə detal səhifəsi açılır.
+            Tapşırıqların içində Demo/Repo/Video kimi linklər də verilə bilər.
+          </p>
+
+          <div class="cardBottom">
+            <span class="badge">Platforma</span>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <span class="badge">GitHub Pages</span>
+              <span class="badge">Static</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tech card -->
+      <article class="card fadeIn" style="animation-delay:140ms">
+        <div class="cardInner">
+          <div class="cardTop">
+            <span class="badge">Stack</span>
+            <span class="badge">Tech</span>
+          </div>
+
+          <h3 class="cardTitle">Texnologiyalar</h3>
+          <p class="cardDesc">
+            Layihə yalnız HTML/CSS/JavaScript ilə hazırlanıb. Backend yoxdur.
+            Admin/Owner bölmələri statik “gizlətmə” mexanizmi ilə işləyir (localStorage/sessionStorage).
+          </p>
+
+          <div class="cardBottom">
+            <span class="badge">İstifadə</span>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">JS</span>
+              <span class="badge">JSON</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ownership / License -->
+      <article class="card fadeIn" style="animation-delay:210ms">
+        <div class="cardInner">
+          <div class="cardTop">
+            <span class="badge">Hüquqlar</span>
+            <span class="badge">İstifadə</span>
+          </div>
+
+          <h3 class="cardTitle">Sayt kimələrə aiddir?</h3>
+          <p class="cardDesc">
+            Bu layihə <b>Uğur İbadov</b>-a aiddir.
+          </p>
+
+          <div class="cardBottom">
+            <a class="btnGhost" href="index.html">Tapşırıqlara bax</a>
+            <a class="btn" href="about.html">About</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="notice">
+      <b>Qısa göstəriş:</b> “Ad Soyad”, email və sosial linkləri öz məlumatlarınla dəyiş.
+      İstəsən, avatar (şəkil) əlavə edək və ya “komanda üzvləri” bölməsi düzəldək.
+    </div>
+  </section>
+
+  <div class="container footer">
+    © <span id="year"></span> Tapşırıq Dünyası • Hazırlayan: Ad Soyad
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Owner Panel — Tapşırıq Dünyası</title>
+  <meta name="description" content="Owner idarəetmə paneli" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brandDot"></span>
+        <span id="brandText">Owner Panel</span>
+      </div>
+      <div class="navlinks">
+        <a class="pill" href="index.html">Tapşırıqlar</a>
+        <a class="pill" href="admin.html">Admin</a>
+        <a class="pill" href="about.html">About</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- OWNER LOGIN (şifrə istəyən hissə) -->
+  <div class="container hero" id="ownerLoginHero">
+    <h1 class="hTitle">Owner giriş</h1>
+    <p class="hSub">Owner paneli üçün ayrıca şifrə tələb olunur.</p>
+  </div>
+
+  <section class="container panel" id="ownerLoginPanel">
+    <div class="controls">
+      <div class="inputs">
+        <input id="ownerPass" class="input" type="password" placeholder="Owner şifrəsi" />
+        <button id="ownerLoginBtn" class="btn">Daxil ol</button>
+        <a class="btnGhost" href="index.html">Geri qayıt</a>
+      </div>
+    </div>
+    <div class="notice hidden" id="ownerLoginMsg"></div>
+  </section>
+
+  <!-- OWNER PANEL (girişdən sonra görünəcək) -->
+  <div class="container hero hidden" id="ownerHero">
+    <h1 class="hTitle">Owner Tools</h1>
+    <p class="hSub">Burdan admin/owner şifrələri, maintenance və admin localStorage tapşırıqları idarə olunur.</p>
+  </div>
+
+  <section class="container panel hidden" id="ownerPanel">
+    <div class="controls">
+      <div class="inputs" style="width:100%; justify-content:space-between;">
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button id="ownerLogout" class="btnGhost btnDanger">Owner çıxış</button>
+        </div>
+        <div class="small">Session: tab bağlanana qədər aktiv</div>
+      </div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); padding:14px;">
+      <!-- Admin password change -->
+      <article class="card fadeIn">
+        <div class="cardInner">
+          <div class="cardTop">
+            <span class="badge">Admin</span>
+            <span class="badge">Password</span>
+          </div>
+          <h3 class="cardTitle">Admin şifrəsini dəyiş</h3>
+          <p class="cardDesc">Admin panelə giriş üçün olan şifrəni dəyiş.</p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <input id="oldAdminPass" class="input" type="password" placeholder="Köhnə admin şifrə" />
+            <input id="newAdminPass" class="input" type="password" placeholder="Yeni admin şifrə" />
+            <button id="changeAdminPass" class="btn">Dəyiş</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Owner password change -->
+      <article class="card fadeIn" style="animation-delay:60ms">
+        <div class="cardInner">
+          <div class="cardTop">
+            <span class="badge">Owner</span>
+            <span class="badge">Password</span>
+          </div>
+          <h3 class="cardTitle">Owner şifrəsini dəyiş</h3>
+          <p class="cardDesc">Owner panelə giriş şifrəsini dəyiş.</p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <input id="oldOwnerPass" class="input" type="password" placeholder="Köhnə owner şifrə" />
+            <input id="newOwnerPass2" class="input" type="password" placeholder="Yeni owner şifrə" />
+            <button id="changeOwnerPass" class="btn">Dəyiş</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Maintenance -->
+      <article class="card fadeIn" style="animation-delay:120ms">
+        <div class="cardInner">
+          <div class="cardTop">
+            <span class="badge">Site</span>
+            <span class="badge">Maintenance</span>
+          </div>
+          <h3 class="cardTitle">Maintenance mode</h3>
+          <p class="cardDesc">Banner göstər və ya saytı blokla (index/task üçün).</p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <select id="maintMode" class="select">
+              <option value="off">Off</option>
+              <option value="banner">Banner only</option>
+              <option value="block">Block site</option>
+            </select>
+            <input id="maintMsg" class="input" placeholder="Mesaj (məs: Yenilənmə gedir)" />
+            <button id="saveMaint" class="btnGhost">Yadda saxla</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Admin localStorage backup/import -->
+      <article class="card fadeIn" style="animation-delay:180ms">
+        <div class="cardInner">
+          <div class="cardTop">
+            <span class="badge">Data</span>
+            <span class="badge">Backup/Import</span>
+          </div>
+          <h3 class="cardTitle">Admin localStorage</h3>
+          <p class="cardDesc">Admin əlavələrini backup export et və ya JSON import et.</p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <input id="importFile" class="input" type="file" accept="application/json" />
+            <button id="importBtn" class="btn">Import</button>
+            <button id="backupBtn" class="btnGhost">Backup export</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="notice">
+      <b>Status</b>
+      <div id="status" style="margin-top:10px;"></div>
+    </div>
+
+    <div class="notice">
+      <b>Admin localStorage tapşırıqları</b>
+      <div id="adminTasks" class="grid" style="padding:12px 0 0;"></div>
+    </div>
+
+    <div class="notice">
+      <b>Audit log</b>
+      <div id="audit" style="margin-top:10px;"></div>
+    </div>
+  </section>
+
+  <div class="container footer">
+    Qeyd: Bu statik qorunmadır. Real təhlükəsizlik üçün server-side auth lazımdır.
+  </div>
+
+  <script src="js/owner.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Tapşırıq Dünyası</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brandDot"></span>
+        <span>Admin Panel</span>
+      </div>
+      <div class="navlinks">
+        <a class="pill" href="index.html">Tapşırıqlar</a>
+        <a class="pill" href="owner.html">Owner</a>
+        <a class="pill" href="about.html">About</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN PANEL -->
+  <div class="container hero" id="loginHero">
+    <h1 class="hTitle">Admin giriş</h1>
+    <p class="hSub">Yalnız admin parolu ilə daxil ol.</p>
+  </div>
+
+  <section class="container panel" id="loginPanel">
+    <div class="controls">
+      <div class="inputs">
+        <input id="adminPass" class="input" type="password" placeholder="Admin parolu" />
+        <button id="loginBtn" class="btn">Daxil ol</button>
+        <a class="btnGhost" href="index.html">Geri qayıt</a>
+      </div>
+    </div>
+    <div class="notice hidden" id="loginMsg"></div>
+  </section>
+
+  <!-- ADMIN PANEL (girişdən sonra görünəcək) -->
+  <div class="container hero hidden" id="adminHero">
+    <h1 class="hTitle">Tapşırıq əlavə et</h1>
+    <p class="hSub">
+      Burda əlavə etdiklərin localStorage-da saxlanır. Hamı görsün deyə “Export JSON” edib `data/tasks.json`-u yeniləyib push etməlisən.
+    </p>
+  </div>
+
+  <section class="container panel hidden" id="adminPanel">
+    <div class="controls">
+      <div class="inputs">
+        <input id="id" class="input" placeholder="ID (məs: js-010)" />
+        <input id="title" class="input" placeholder="Başlıq" />
+        <input id="category" class="input" placeholder="Kateqoriya (məs: JavaScript)" />
+        <input id="desc" class="input" placeholder="Qısa təsvir" />
+      </div>
+    </div>
+
+    <div style="padding:0 14px 14px;">
+      <textarea id="content" class="textarea" placeholder="Detallar (sətir-sətir)"></textarea>
+
+      <input id="links" class="input" style="width:100%; margin-top:10px;"
+        placeholder="Linklər: Demo|https://... , Repo|https://... , YouTube|https://..." />
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+        <button id="add" class="btn">Əlavə et</button>
+        <button id="export" class="btnGhost">Export JSON</button>
+        <button id="logout" class="btnGhost btnDanger">Çıxış</button>
+      </div>
+    </div>
+
+    <div class="notice hidden" id="msg"></div>
+
+    <div class="notice">
+      <b>Admin əlavələri (localStorage):</b>
+      <div id="adminList" class="grid" style="padding:12px 0 0;"></div>
+    </div>
+  </section>
+
+  <div class="container footer">
+    Qeyd: Bu statik “qoruma”dır. Real təhlükəsizlik üçün server-side auth lazımdır.
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
